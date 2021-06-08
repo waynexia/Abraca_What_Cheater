@@ -1,0 +1,97 @@
+<h1>Abraca What Cheater</h1>
+
+<h2>Definition</h2>
+
+<p>All cards number <strong>N<sub>all</sub></strong></p>
+<p>Known cards number <strong>N<sub>known</sub></strong></p>
+<p>Unknown cards number <strong>N<sub>unknown</sub></strong></p>
+<p>Remaining number of each card <i>i</i> (<i>i</i> = 1~8) <strong>N<sub>i</sub></strong></p>
+<p>Probability of each card <i>i</i> <strong>P<sub>i</sub> = N<sub>i</sub> / N<sub>u</sub></strong></p>
+<p>Number of players (suggest 2~5) <strong>N<sub>player</sub></strong> =
+    <input type="number" min="2" max="5" value="4" id="n_player">
+</p>
+
+<table>
+    <thead>
+        <tr>
+            <th colspan="4">Expect HP affect of each card</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>EH<sub>1</sub></strong></td>
+            <td><strong>EH<sub>2</sub></strong></td>
+            <td><strong>EH<sub>3</sub></strong></td>
+            <td><strong>EH<sub>4</sub></strong></td>
+        </tr>
+        <tr>
+            <td>-2*<strong>N<sub>p</sub></strong></td>
+            <td>-<strong>N<sub>p</sub></strong>+1</td>
+            <td>+2</td>
+            <td>?</td>
+        </tr>
+        <tr></tr>
+        <tr>
+            <td><strong>EH<sub>5</sub></strong></td>
+            <td><strong>EH<sub>6</sub></strong></td>
+            <td><strong>EH<sub>7</sub></strong></td>
+            <td><strong>EH<sub>8</sub></strong></td>
+        </tr>
+        <tr>
+            <td>-2</td>
+            <td>-1</td>
+            <td>-1</td>
+            <td>+1</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>
+    Expectation on HP of each operation<br>
+    <strong>EOperation<sub>i</sub></strong> = <strong>P<sub>i</sub></strong> *
+    <i>abs</i>(<strong>EH<sub>i</sub></strong>) - (1 - <strong>P<sub>i</sub></strong>)
+</p>
+
+<h2>Calculation</h2>
+
+<div>
+    <div>
+        Remaining
+        <button onclick=reset_remaining_number()>Reset</button>
+        <button onclick=calculate()>Calculate</button>
+    </div>
+    <div>
+        <div>1 <input type="number" min="0" max="1" value="1" id="r1"></div>
+        <div>P<sub>i</sub> = <span id="p1"></span>, EOH<sub>i</sub> = <span id="eoh1"></span></div>
+    </div>
+    <div>
+        <div>2 <input type="number" min="0" max="2" value="2" id="r2"></div>
+        <div>P<sub>i</sub> = <span id="p2"></span>, EOH<sub>i</sub> = <span id="eoh2"></span></div>
+    </div>
+    <div>
+        <div>3 <input type="number" min="0" max="3" value="3" id="r3"></div>
+        <div>P<sub>i</sub> = <span id="p3"></span>, EOH<sub>i</sub> = <span id="eoh3"></span></div>
+    </div>
+    <div>
+        <div>4 <input type="number" min="0" max="4" value="4" id="r4"></div>
+        <div>P<sub>i</sub> = <span id="p4"></span>, EOH<sub>i</sub> = <span id="eoh4"></span></div>
+    </div>
+    <div>
+        <div>5 <input type="number" min="0" max="5" value="5" id="r5"></div>
+        <div>P<sub>i</sub> = <span id="p5"></span>, EOH<sub>i</sub> = <span id="eoh5"></span></div>
+    </div>
+    <div>
+        <div>6 <input type="number" min="0" max="6" value="6" id="r6"></div>
+        <div>P<sub>i</sub> = <span id="p6">?</span>, EOH<sub>i</sub> = <span id="eoh6"></span></div>
+    </div>
+    <div>
+        <div>7 <input type="number" min="0" max="7" value="7" id="r7"></div>
+        <div>P<sub>i</sub> = <span id="p7"></span>, EOH<sub>i</sub> = <span id="eoh7"></span></div>
+    </div>
+    <div>
+        <div>8 <input type="number" min="0" max="8" value="8" id="r8"></div>
+        <div>P<sub>i</sub> = <span id="p8"></span>, EOH<sub>i</sub> = <span id="eoh8"></span></div>
+    </div>
+</div>
+
+<script src="calc.js"></script>
