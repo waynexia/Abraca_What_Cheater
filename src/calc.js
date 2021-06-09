@@ -1,10 +1,22 @@
 var CARD_NUM = 36;
 var CARD_KIND = 8;
 
+function reset() {
+    reset_remaining_number();
+    reset_marker();
+}
+
 function reset_remaining_number() {
     for (var i = 1; i <= CARD_KIND; i++) {
         var elem = document.getElementById('r' + i);
         elem.value = i
+    }
+}
+
+function reset_marker() {
+    for (var i = 1; i <= CARD_KIND; i++) {
+        document.getElementById('not_mark_' + i).className = "";
+        document.getElementById('doubt_mark_' + i).className = "";
     }
 }
 
@@ -19,6 +31,7 @@ function calculate() {
         document.getElementById('p' + i).textContent = to_percent(p[i - 1]);
         document.getElementById('eoh' + i).textContent = eoh[i - 1].toPrecision(4);
     }
+    document.getElementById('total_remaining').textContent = n_unknown;
 }
 
 function calculate_n_unknown() {
@@ -71,4 +84,24 @@ function to_percent(float_value) {
     float_value = float_value.toFixed(4) * 100;
     float_value = float_value.toFixed(2);
     return String(float_value) + '%';
+}
+
+function mark_not(index) {
+    let mark = document.getElementById('not_mark_' + index);
+    if (mark.className === "") {
+        mark.className = "not_mark_selected";
+    } else {
+        mark.className = "";
+    }
+    document.getElementById('doubt_mark_' + index).className = "";
+}
+
+function mark_doubt(index) {
+    let mark = document.getElementById('doubt_mark_' + index);
+    if (mark.className === "") {
+        mark.className = "doubt_mark_selected";
+    } else {
+        mark.className = "";
+    }
+    document.getElementById('not_mark_' + index).className = "";
 }

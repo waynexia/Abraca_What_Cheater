@@ -57,41 +57,77 @@
 <div>
     <div>
         Remaining
-        <button onclick=reset_remaining_number()>Reset</button>
+        <button onclick=reset()>Reset</button>
         <button onclick=calculate()>Calculate</button>
     </div>
     <div>
-        <div>1 <input type="number" min="0" max="1" value="1" id="r1"></div>
+        <div>
+            1 <input type="number" min="0" max="1" value="1" id="r1">
+            <button id="not_mark_1" onclick=mark_not(1)>X</button>
+            <button id="doubt_mark_1" onclick=mark_doubt(1)>?</button>
+        </div>
         <div>P<sub>i</sub> = <span id="p1"></span>, EOH<sub>i</sub> = <span id="eoh1"></span></div>
     </div>
     <div>
-        <div>2 <input type="number" min="0" max="2" value="2" id="r2"></div>
+        <div>
+            2 <input type="number" min="0" max="2" value="2" id="r2">
+            <button id="not_mark_2" onclick=mark_not(2)>X</button>
+            <button id="doubt_mark_2" onclick=mark_doubt(2)>?</button>
+        </div>
         <div>P<sub>i</sub> = <span id="p2"></span>, EOH<sub>i</sub> = <span id="eoh2"></span></div>
     </div>
     <div>
-        <div>3 <input type="number" min="0" max="3" value="3" id="r3"></div>
+        <div>
+            3 <input type="number" min="0" max="3" value="3" id="r3">
+            <button id="not_mark_3" onclick=mark_not(3)>X</button>
+            <button id="doubt_mark_3" onclick=mark_doubt(3)>?</button>
+        </div>
         <div>P<sub>i</sub> = <span id="p3"></span>, EOH<sub>i</sub> = <span id="eoh3"></span></div>
     </div>
     <div>
-        <div>4 <input type="number" min="0" max="4" value="4" id="r4"></div>
+        <div>
+            4 <input type="number" min="0" max="4" value="4" id="r4">
+            <button id="not_mark_4" onclick=mark_not(4)>X</button>
+            <button id="doubt_mark_4" onclick=mark_doubt(4)>?</button>
+        </div>
         <div>P<sub>i</sub> = <span id="p4"></span>, EOH<sub>i</sub> = <span id="eoh4"></span></div>
     </div>
     <div>
-        <div>5 <input type="number" min="0" max="5" value="5" id="r5"></div>
+        <div>
+            5 <input type="number" min="0" max="5" value="5" id="r5">
+            <button id="not_mark_5" onclick=mark_not(5)>X</button>
+            <button id="doubt_mark_5" onclick=mark_doubt(5)>?</button>
+        </div>
         <div>P<sub>i</sub> = <span id="p5"></span>, EOH<sub>i</sub> = <span id="eoh5"></span></div>
     </div>
     <div>
-        <div>6 <input type="number" min="0" max="6" value="6" id="r6"></div>
+        <div>
+            6 <input type="number" min="0" max="6" value="6" id="r6">
+            <button id="not_mark_6" onclick=mark_not(6)>X</button>
+            <button id="doubt_mark_6" onclick=mark_doubt(6)>?</button>
+        </div>
         <div>P<sub>i</sub> = <span id="p6">?</span>, EOH<sub>i</sub> = <span id="eoh6"></span></div>
     </div>
     <div>
-        <div>7 <input type="number" min="0" max="7" value="7" id="r7"></div>
+        <div>
+            7 <input type="number" min="0" max="7" value="7" id="r7">
+            <button id="not_mark_7" onclick=mark_not(7)>X</button>
+            <button id="doubt_mark_7" onclick=mark_doubt(7)>?</button>
+        </div>
         <div>P<sub>i</sub> = <span id="p7"></span>, EOH<sub>i</sub> = <span id="eoh7"></span></div>
     </div>
     <div>
-        <div>8 <input type="number" min="0" max="8" value="8" id="r8"></div>
+        <div>
+            8 <input type="number" min="0" max="8" value="8" id="r8">
+            <button id="not_mark_8" onclick=mark_not(8)>X</button>
+            <button id="doubt_mark_8" onclick=mark_doubt(8)>?</button>
+        </div>
         <div>P<sub>i</sub> = <span id="p8"></span>, EOH<sub>i</sub> = <span id="eoh8"></span></div>
+    </div>
+    <div>
+        Total Remaining: <span id="total_remaining"></span>
     </div>
 </div>
 
 <script src="calc.js"></script>
+<link rel="stylesheet" href="index.css">
